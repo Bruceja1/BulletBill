@@ -6,7 +6,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var velocity = Vector2.ZERO
 
-	velocity.x -= 500
+	velocity.x -= 1000
 	
 	position += velocity * delta	
 	

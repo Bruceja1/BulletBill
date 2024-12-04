@@ -1,12 +1,20 @@
 [gd_scene load_steps=3 format=3 uid="uid://d2lejekyqlg72"]
 
 [ext_resource type="PackedScene" uid="uid://ceshkrptfcwe3" path="res://src/player.tscn" id="1_ydvtx"]
-[ext_resource type="PackedScene" uid="uid://c4wcb5he6sglu" path="res://src/platform.tscn" id="2_k48ry"]
+[ext_resource type="PackedScene" uid="uid://ymgfg51xqlo2" path="res://src/terrain/terrain1.tscn" id="2_b6huc"]
 
-[node name="Node" type="Node"]
+[node name="Main" type="Node"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.580392, 0.580392, 1, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_ydvtx")]
+position = Vector2(336, 352)
 
-[node name="Platform" parent="." instance=ExtResource("2_k48ry")]
-position = Vector2(1000, 352)
-scale = Vector2(5, 5)
+[node name="Terrain1" parent="." instance=ExtResource("2_b6huc")]
+position = Vector2(992, 200)
