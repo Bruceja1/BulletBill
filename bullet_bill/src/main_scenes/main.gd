@@ -17,6 +17,7 @@ func _process(delta: float) -> void:
 func _on_obstacle_timer_timeout() -> void:
 	var obstacle = object_scene.instantiate()
 	obstacle.position = obstacle_position
+	obstacle.position.y = obstacle.spawn_height
 	obstacle.set("scale", obstacle_scale)
 	obstacle.obstacle_velocity = obstacle_velocity
 	
