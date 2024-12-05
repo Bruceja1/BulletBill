@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dshvhtbuionwl"]
+
+[ext_resource type="Script" path="res://src/obstacle1_scenes/obstacle1-2u.gd" id="1_ber0b"]
+[ext_resource type="Texture2D" uid="uid://c7sbiulrfuy56" path="res://assets/obstacle1_sprites/obstacle1_2.png" id="2_krybp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mosmn"]
+size = Vector2(80, 32)
+
+[node name="Obstacle1-2u" type="Area2D"]
+texture_filter = 1
+rotation = 3.14159
+script = ExtResource("1_ber0b")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_krybp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mosmn")

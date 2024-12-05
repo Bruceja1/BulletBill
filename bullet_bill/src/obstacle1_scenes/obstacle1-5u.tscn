@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bne8xvhymcs5l"]
+
+[ext_resource type="Script" path="res://src/obstacle1_scenes/obstacle1-5u.gd" id="1_qu13k"]
+[ext_resource type="Texture2D" uid="uid://ck6r6lhqksoks" path="res://assets/obstacle1_sprites/obstacle1_5.png" id="2_51k8j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mosmn"]
+size = Vector2(80, 80)
+
+[node name="Obstacle1-5u" type="Area2D"]
+rotation = -3.14159
+script = ExtResource("1_qu13k")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 40)
+texture = ExtResource("2_51k8j")
+offset = Vector2(0, -40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mosmn")

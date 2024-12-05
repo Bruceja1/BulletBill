@@ -19,7 +19,6 @@ color = Color(0.580392, 0.580392, 1, 1)
 position = Vector2(336, 352)
 
 [node name="ObstacleTimer" type="Timer" parent="."]
-wait_time = 1.5
 
 [node name="StartTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -30,7 +29,7 @@ one_shot = true
 [node name="HUD" parent="." instance=ExtResource("3_3fgbh")]
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(336, 352)
+position = Vector2(136, 352)
 
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="ObstacleTimer" to="." method="_on_obstacle_timer_timeout"]
