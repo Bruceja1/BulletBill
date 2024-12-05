@@ -6,6 +6,7 @@ var speed = 1000
 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
+	hide()
 	
 
 func _process(delta: float) -> void:
@@ -23,3 +24,11 @@ func _process(delta: float) -> void:
 
 func _on_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	hide()
+	hit.emit()
+	$CollisionShape2D.set_deferred("disabled", true)
+
+func start(pos):
+	position = pos
+	show()
+	$CollisionShape2D.disabled = false
+	
