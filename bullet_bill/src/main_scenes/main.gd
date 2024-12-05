@@ -1,5 +1,7 @@
 extends Node
 
+@export var cloud_scene : PackedScene
+
 var obstacle_scenes = [
 	preload("res://src/obstacle1_scenes/obstacle1-1.tscn"),
 	preload("res://src/obstacle1_scenes/obstacle1-2.tscn"),
@@ -18,6 +20,7 @@ var obstacle_scenes = [
 var obstacle_position = Vector2(1600, 608)
 var obstacle_scale = Vector2(5, 5)
 var obstacle_velocity = Vector2(1500, 0)
+var cloud_velocity = Vector2(2000, 0)
 var score
 
 # Called when the node enters the scene tree for the first time.
@@ -33,6 +36,7 @@ func _process(delta: float) -> void:
 func game_over() -> void:
 	$ScoreTimer.stop()
 	$ObstacleTimer.stop()
+	$CloudTimer.stop()
 	$HUD.show_game_over()
 	#$Music.stop()
 	#$DeathSound.play()
@@ -55,6 +59,7 @@ func _on_obstacle_timer_timeout() -> void:
 	obstacle.set("scale", obstacle_scale)
 	obstacle.obstacle_velocity = obstacle_velocity
 	
+
 	add_child(obstacle)
 	print("Spawning object!")
 
@@ -66,4 +71,16 @@ func _on_score_timer_timeout() -> void:
 
 func _on_start_timer_timeout() -> void:
 	$ObstacleTimer.start()
+	$CloudTimer.start()
 	$ScoreTimer.start()
+
+
+func _on_cloud_timer_timeout() -> void:
+	var cloud = cloud_scene.instantiate()	
+	cloud.position.x = $TopRightMarker.position.x
+	cloud.position.y = randf_range($TopRightMarker.position.y, $BottomRightMarker.position.y)
+	cloud.cloud_velocity = cloud_velocity
+	
+	add_child(cloud)
+	print("Spawning cloud!")
+	
