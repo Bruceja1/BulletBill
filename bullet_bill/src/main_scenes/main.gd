@@ -1,6 +1,7 @@
 extends Node
 
 @export var cloud_scene : PackedScene
+@export var hill_scene : PackedScene
 
 var obstacle_scenes = [
 	preload("res://src/obstacle1_scenes/obstacle1-1.tscn"),
@@ -20,7 +21,8 @@ var obstacle_scenes = [
 var obstacle_position = Vector2(1600, 608)
 var obstacle_scale = Vector2(5, 5)
 var obstacle_velocity = Vector2(1500, 0)
-var cloud_velocity = Vector2(2000, 0)
+var cloud_velocity = Vector2(2500, 0)
+var hill_velocity = Vector2(1100, 0)
 var score
 
 # Called when the node enters the scene tree for the first time.
@@ -37,10 +39,10 @@ func game_over() -> void:
 	$ScoreTimer.stop()
 	$ObstacleTimer.stop()
 	$CloudTimer.stop()
+	$HillTimer.stop()
 	$HUD.show_game_over()
 	#$Music.stop()
 	#$DeathSound.play()
-
 
 func new_game():
 	score = 0
@@ -72,6 +74,7 @@ func _on_score_timer_timeout() -> void:
 func _on_start_timer_timeout() -> void:
 	$ObstacleTimer.start()
 	$CloudTimer.start()
+	$HillTimer.start()
 	$ScoreTimer.start()
 
 
@@ -84,3 +87,13 @@ func _on_cloud_timer_timeout() -> void:
 	add_child(cloud)
 	print("Spawning cloud!")
 	
+
+
+func _on_hill_timer_timeout() -> void:
+	var hill = hill_scene.instantiate()
+	hill.position = $BottomRightMarker.position
+	hill.position.y -= 88
+	hill.hill_velocity = hill_velocity
+	
+	add_child(hill)
+	print("Spawning hill!")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://datxs4osx3fot"]
+
+[ext_resource type="Script" path="res://src/background_scenes/hill_scenes/hill.gd" id="1_ltast"]
+[ext_resource type="Texture2D" uid="uid://04fggwvfargs" path="res://assets/background_sprites/hill.png" id="2_2hikw"]
+
+[node name="Hill" type="Area2D"]
+z_index = -2
+script = ExtResource("1_ltast")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("2_2hikw")
