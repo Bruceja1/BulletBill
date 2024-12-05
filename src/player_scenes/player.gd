@@ -24,6 +24,8 @@ func _process(delta: float) -> void:
 		velocity.y += speed
 		rotation_degrees = max_rotation
 		
+	if Input.is_action_pressed("move_up") && Input.is_action_pressed("move_down"):
+		rotation_degrees = 0
 				
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size)
