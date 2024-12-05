@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b14vo3l43f0s0"]
+[gd_scene load_steps=3 format=3 uid="uid://b14vo3l43f0s0"]
 
 [ext_resource type="Script" path="res://src/hud_scenes/hud.gd" id="1_7waki"]
+[ext_resource type="FontFile" uid="uid://bod4bcrborjsl" path="res://assets/fonts/Super Mario Bros. 2.ttf" id="2_2fena"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_7waki")
@@ -15,6 +16,7 @@ offset_bottom = 88.0
 grow_horizontal = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_2fena")
 theme_override_font_sizes/font_size = 64
 text = "0"
 
@@ -30,6 +32,7 @@ offset_right = 146.5
 offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_2fena")
 theme_override_font_sizes/font_size = 64
 text = "Bullet Bill"
 
@@ -46,6 +49,7 @@ offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_2fena")
 theme_override_font_sizes/font_size = 64
 text = "Start"
 
