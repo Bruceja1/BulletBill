@@ -25,6 +25,9 @@ var cloud_velocity = Vector2(2500, 0)
 var hill_velocity = Vector2(1100, 0)
 var score
 
+var increased_amount_of_velocity = 0
+var velocity_increment = 50
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -44,7 +47,8 @@ func game_over() -> void:
 	$HUD.show_game_over()
 	$Music.stop()
 	$DeathSound.play()
-	
+	obstacle_velocity.x -= increased_amount_of_velocity
+	increased_amount_of_velocity = 0
 
 func new_game():
 	score = 0
@@ -103,5 +107,8 @@ func _on_hill_timer_timeout() -> void:
 
 
 func _on_difficulty_timer_timeout() -> void:
-	obstacle_velocity.x += 1000
+	obstacle_velocity.x += velocity_increment
+	increased_amount_of_velocity += velocity_increment
 	print("Obstacle velocity has increased!")
+	print(obstacle_velocity.x)
+	print(increased_amount_of_velocity)
