@@ -1,4 +1,5 @@
 extends Area2D
+var obstacle_velocity = Vector2.ZERO
 
 func _ready() -> void:
 	pass
@@ -6,7 +7,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var velocity = Vector2.ZERO
 
-	velocity.x -= 1000
+	velocity.x -= obstacle_velocity.x
 	
 	position += velocity * delta	
 	

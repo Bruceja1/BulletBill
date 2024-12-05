@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c4wcb5he6sglu"]
 
-[ext_resource type="Script" path="res://src/platform.gd" id="1_wh8y6"]
-[ext_resource type="Texture2D" uid="uid://dj65udj785b3y" path="res://assets/brick.png" id="2_br85l"]
+[ext_resource type="Script" path="res://src/obstacle1_scenes/obstacle.gd" id="1_wh8y6"]
+[ext_resource type="Texture2D" uid="uid://dj65udj785b3y" path="res://assets/platform_sprites/brick.png" id="2_br85l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yg8nx"]
 size = Vector2(16, 16)

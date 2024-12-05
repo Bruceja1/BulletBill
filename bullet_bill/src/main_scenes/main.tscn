@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://d2lejekyqlg72"]
 
-[ext_resource type="Script" path="res://src/main.gd" id="1_887oi"]
-[ext_resource type="PackedScene" uid="uid://ceshkrptfcwe3" path="res://src/player.tscn" id="1_ydvtx"]
-[ext_resource type="PackedScene" uid="uid://ymgfg51xqlo2" path="res://src/terrain/terrain1.tscn" id="2_b6huc"]
+[ext_resource type="Script" path="res://src/main_scenes/main.gd" id="1_887oi"]
+[ext_resource type="PackedScene" uid="uid://ceshkrptfcwe3" path="res://src/player_scenes/player.tscn" id="1_ydvtx"]
+[ext_resource type="PackedScene" uid="uid://caajmwfvujrpd" path="res://src/obstacle1_scenes/obstacle1-5.tscn" id="2_a3ouf"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_887oi")
-object_scene = ExtResource("2_b6huc")
+object_scene = ExtResource("2_a3ouf")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
