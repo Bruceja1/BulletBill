@@ -41,8 +41,8 @@ func game_over() -> void:
 	$CloudTimer.stop()
 	$HillTimer.stop()
 	$HUD.show_game_over()
-	#$Music.stop()
-	#$DeathSound.play()
+	$Music.stop()
+	$DeathSound.play()
 
 func new_game():
 	score = 0
@@ -50,7 +50,7 @@ func new_game():
 	$StartTimer.start()
 	$HUD.update_score(score)
 	$HUD.show_message("Get Ready")
-	#$Music.play()
+	$Music.play()
 
 
 func _on_obstacle_timer_timeout() -> void:

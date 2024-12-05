@@ -22,6 +22,7 @@ func show_game_over():
 	
 	$Message.text = "Bullet Bill"
 	$Message.show()
+	$Credits.show()
 	
 	await get_tree().create_timer(1.0).timeout
 	$StartButton.show()
@@ -31,7 +32,9 @@ func update_score(score):
 
 func _on_start_button_pressed() -> void:
 	$StartButton.hide()
+	$Credits.hide()
 	start_game.emit()
 	
 func _on_message_timer_timeout() -> void:
 	$Message.hide()
+	$Credits.hide()
