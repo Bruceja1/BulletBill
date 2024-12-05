@@ -40,9 +40,11 @@ func game_over() -> void:
 	$ObstacleTimer.stop()
 	$CloudTimer.stop()
 	$HillTimer.stop()
+	$DifficultyTimer.stop()
 	$HUD.show_game_over()
 	$Music.stop()
 	$DeathSound.play()
+	
 
 func new_game():
 	score = 0
@@ -76,6 +78,7 @@ func _on_start_timer_timeout() -> void:
 	$CloudTimer.start()
 	$HillTimer.start()
 	$ScoreTimer.start()
+	$DifficultyTimer.start()
 
 
 func _on_cloud_timer_timeout() -> void:
@@ -97,3 +100,8 @@ func _on_hill_timer_timeout() -> void:
 	
 	add_child(hill)
 	print("Spawning hill!")
+
+
+func _on_difficulty_timer_timeout() -> void:
+	obstacle_velocity.x += 1000
+	print("Obstacle velocity has increased!")
