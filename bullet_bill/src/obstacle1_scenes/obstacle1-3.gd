@@ -1,6 +1,6 @@
 extends Area2D
 var obstacle_velocity = Vector2.ZERO
-var spawn_height = 447
+var spawn_height = 528
 
 func _ready() -> void:
 	pass
