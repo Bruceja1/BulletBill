@@ -26,7 +26,7 @@ var hill_velocity = Vector2(1100, 0)
 var score
 
 var increased_amount_of_velocity = 0
-var velocity_increment = 50
+var velocity_increment = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
